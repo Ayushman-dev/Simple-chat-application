@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&display=swap');
+
+
+@font-face {
+    font-family: stanley;
+    src: url(./fonts/Stanley.otf);
+}
+
+button{
+    background-color: transparent;
+    border: transparent;
+    outline: transparent;
+}
+
+*{
+    font-family: inter;
+    margin: 0;
+    background-color: 0;
+    --black-color: #222;
+    --white-color: #f3f3f3;
+    --white-color-lowop: #9999993d;
+    --blue-color-main: #00afb9;
+    --blue-color-sec: #0081a7;
+    --blue-color-light: rgba(210, 245, 255, 0.349);
+    --red-color-main: #c1121f;
+    --pink-color:rgb(255, 135, 155);
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--white-color);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.left{
+width: 30%;
+height: 100vh;
+display: grid;
+background: linear-gradient(var(--blue-color-main),var(--blue-color-sec));
+/* box-shadow: 0rem 0rem 10px #999; */
+place-items: center;
+gap: 30px;
+}
+
+.main{
+    display: flex;
+}
+.catchline{
+    color: var(--white-color);
+    font-family: "inter";
+    font-size: 16px;
+}
+.icon{
+    font-size: 200px;
+    color: var(--white-color);
+}
+.right{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    font-family: "stanley";
+    font-size: 30px;
+}
+
+.rightcomp{
+    /* height: 25rem; */
+    background: var(--white-color-lowop);
+    padding: 10px;
+    border-radius: 30px;
+    align-items:center ;
+    z-index: 0;
+    backdrop-filter: blur(16px);
+
+}
+.name,.room,.btn {
+display: block;
+padding: 0;
+margin: 0;
+border: none;
+width: 30rem;
+padding: 5px;
+background: transparent;
+outline: none;
+}
+
+.name,.room{
+    font-family: "stanley";
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+    font-size: 20px;
+    padding: 10px;
+    transition: 0.5s;
+    border-bottom: 1px solid #888;
+    color: var(--black-color);
+}
+
+
+.btn{
+    margin-left: 20px;
+    border-radius: 30px;
+    font-family: inter;
+    transition: 0.2s;
+
+}
+
+.btn:active{
+    transition: 0.2s;
+    scale: 90%;
+}
+
+.blob{
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(var(--blue-color-main),var(--blue-color-sec));
+
+    border-radius: 50% 50% 50% 50%;
+    position: absolute;
+    z-index: -3;
+    top: 100px;
+   animation: rotate 10s infinite linear;
+}
+
+.headerchat{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    font-family:  Helvetica, sans-serif;
+    font-size: 30px;
+    background-color: var(--white-color-lowop);
+    backdrop-filter: blur(5px);
+    color: var(--black-color);
+  }
+
+  .back{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    color: var(--black-color);
+
+
+  }
+
+  .roomid{
+    position: absolute;
+    right: 40px;
+  }
+
+
+
+  .msg{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  .msg{
+    margin: 20px;
+    padding: 10px;
+    width: 80%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    word-wrap: normal;
+
+  }
+
+  .users{
+    position: fixed;
+    width: 15vw;
+
+  }
+
+  .sendbtn{
+    position: fixed;
+    bottom: 0;
+    right: 15%;
+    margin: 20px;
+    padding: 11px;
+    background-color: #ffff;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  .sendbtn:active{
+    scale: 90%;
+    background-color: var(--pink-color);
+    transition: 0.3s;
+  }
+
+  .users{
+    position: fixed;
+    right: 0;
+    top: 74px;
+    /* margin: 10px; */
+    padding: 20px;
+    background-color: var(--white-color-lowop);
+    width: 15vw;
+    height: calc(100vh - 75px);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+    border-radius: 30px 0px 0px 0px;
+  }
+
+  .leftchat{
+    margin-top: 65px;
+    width: 85vw;
+    height: calc(100vh - 135px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+  }
+
+  .other{
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: var(--white-color-lowop);
+    margin: 10px;
+    border-radius: 30px 30px 30px 30px;
+    margin-right: 10px;
+    backdrop-filter: blur(16px);
+  }
+
+  .me{
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: var(--blue-color-light);
+    margin: 10px;
+    border-radius: 30px 30px 30px 30px;
+    margin-right: 10px;
+    backdrop-filter: blur(16px);
+  }
+
+  .me .message {
+    /* display: flex; */
+    width: 80vw;
+    word-wrap: break-word;
+  }
+  .other .message {
+    /* display: flex; */
+    width: 80vw;
+    word-wrap: break-word;
+  }
+
+/* Track */
+::-webkit-scrollbar {
+    width: 8px; /* width of the scrollbar */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* color of the scrollbar handle */
+    border-radius: 4px; /* roundness of the scrollbar handle */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* color of the scrollbar handle when hovered */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* color of the scrollbar track */
+  }
+  
+  /* Handle when scrolling */
+  ::-webkit-scrollbar-thumb:active {
+    background: #777; /* color of the scrollbar handle when scrolling */
+  }
+
+  .author {
+    display: flex;
+    margin-right: 5px;
+    font-weight: 800;
+  }
+
+  .bytime {
+    display: flex;
+  }
+
+  .other .time {
+    font-size: 11px;
+    margin-top:4px ;
+    color: #555;
+
+  }
+  .me .time {
+    font-size: 11px;
+    margin-top:4px ;
+    color: #555;
+  }
+
+@keyframes rotate{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+
+.invalidinfo{
+    font-family: inter;
+    color: var(--red-color-main);
+}
+
+@media only screen and (max-width: 1449px) {
+    .left{
+        display: none;
+    }
+    .right{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .rightcomp{
+        margin-top: 20vh;
+
+    }
+    .name,.room{
+        font-family: "stanley";
+        margin-top: 4rem;
+        margin-bottom: 8rem;
+        font-size: 20px;
+        padding: 10px;
+        transition: 0.5s;
+        border-bottom: 1px solid #888;
+        color: var(--black-color);
+    }
+  }
+@media only screen and (max-width: 1200px) {
+    .users .activeusers{
+        font-size: 20px;
+      }
+      .users{
+        position: fixed;
+        right: 0;
+        top: 74px;
+        /* margin: 10px; */
+        padding: 20px;
+        background-color: var(--white-color-lowop);
+        width: 15vw;
+        height: calc(100vh - 75px);
+        backdrop-filter: blur(5px);
+        z-index: -1;
+        border-radius: 30px 0px 0px 0px;
+      }
+  }
+@media only screen and (max-width: 750px) {
+    .users .activeusers{
+        font-size: 20px;
+      }
+      .users{
+        position: fixed;
+        right: 0;
+        top: 74px;
+        /* margin: 10px; */
+        padding: 20px;
+        background-color: var(--white-color-lowop);
+        width: 20vw;
+        height: calc(100vh - 75px);
+        backdrop-filter: blur(5px);
+        z-index: -1;
+        border-radius: 30px 0px 0px 0px;
+      }
+
+      .leftchat{
+        margin-top: 65px;
+        width: 80vw;
+        height: calc(100vh - 135px);
+        overflow-y: scroll;
+        overflow-x: hidden;
+    
+      }
+      .me .message {
+        /* display: flex; */
+        width: 70vw;
+        word-wrap: break-word;
+      }
+      .other .message {
+        /* display: flex; */
+        width: 70vw;
+        word-wrap: break-word;
+      }
+      .sendbtn{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 20px;
+        padding: 11px;
+        background-color: #ffff;
+        border-radius: 10px;
+        transition: 0.3s;
+      }
+  }
+@media only screen and (max-width: 520px) {
+    .right{
+        height: 100%;
+    }
+    .rightcomp{
+        height: 100%;
+        margin-top: 20vh;
+    }
+    .name,.room,.btn {
+        display: block;
+        padding: 0;
+        margin: 0;
+        border: none;
+        width: 90vw;
+        padding: 5px;
+        background: transparent;
+        outline: none;
+        }
+        .name,.room{
+            font-family: "stanley";
+            margin-top: 4rem;
+            margin-bottom: 6rem;
+            font-size: 20px;
+            padding: 10px;
+            transition: 0.5s;
+            border-bottom: 1px solid #888;
+            color: var(--black-color);
+        }
+  .users .activeusers{
+    font-size: 20px;
+  }
+  .users{
+    position: fixed;
+    right: 0;
+    top: 74px;
+    /* margin: 10px; */
+    padding: 20px;
+    background-color: var(--white-color-lowop);
+    width: 25vw;
+    height: calc(100vh - 75px);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+    border-radius: 30px 0px 0px 0px;
+    overflow-y: scroll;
+  }
+
+  .leftchat{
+    margin-top: 65px;
+    width: 75vw;
+    height: calc(100vh - 135px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+  }
+  .me .message {
+    /* display: flex; */
+    width: 65vw;
+    word-wrap: break-word;
+  }
+  .other .message {
+    /* display: flex; */
+    width: 65vw;
+    word-wrap: break-word;
+  }
+  }
+
+  .quistion{
+    font-size: 16px;
+    margin-left: 15px;
+    color: var(--white-color);
+    background: #222;
+    padding: 5px  8px 5px 8px;
+    border-radius: 50%;
+  }
+
+  .title{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+
+  .about{
+    height: 100vh;
+    display: grid;
+    /* align-items: center; */
+    place-items: center;
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+  }
+
+  .info{
+    width: 60%;
+    background-color: var(--white-color-lowop);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  .info span{
+    display: block;
+  }
+
+  .about .back{
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .ranblob{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    z-index: -2;
+    background-color: #f72585;
+    border-radius: 50%;
+    animation: rando 60s linear infinite;
+  }
+  .ranblob1{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    z-index: -2;
+    background-color: #480ca8;
+    border-radius: 50%;
+    animation: rando 90s linear infinite;
+  }
+  .ranblob2{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    z-index: -2;
+    background-color: #4cc9f0;
+    border-radius: 50%;
+    animation: rando 120s linear infinite;
+  }
+
+  @keyframes rando {
+    0%{
+        top: 100px;
+        left: 100px;
+    }
+    10%{
+        top: 300px;
+        left: 300px;
+    }
+    20%{
+        top: 400px;
+        left: 400px;
+    }
+    30%{
+        top: 300px;
+        left: 700px;
+    }
+    40%{
+        top: 200px;
+        left: 800px;
+    }
+    50%{
+        top: 250px;
+        left: 650px;
+    }
+    60%{
+        top: 350px;
+        left: 250px;
+    }
+    70%{
+        top: 450px;
+        left: 150px; 
+    }
+    80%{
+        top: 300px;
+        left: 200px;
+    }
+    90%{
+        top: 200px;
+        left: 200px;
+    }
+    100%{
+        top: 100px;
+        left: 100px;
+    }
+  }
+
+  .fullscreen-blur{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    backdrop-filter: blur(62px);
+    top: 0;
+    left: 0;
+  }

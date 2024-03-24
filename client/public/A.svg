@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" width="720" height="720">
+	<title>New Project</title>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 24px;fill: #ffffff;font-weight: 600;font-family: "FreeSansBold", "FreeSans" } 
+	</style>
+	<text id="A" style="transform: matrix(27.5,0,0,27.5,121,607)" >
+		<tspan x="0" y="0" class="t0">A</tspan><tspan  y="0" class="t0">
+</tspan>
+	</text>
+</svg>
